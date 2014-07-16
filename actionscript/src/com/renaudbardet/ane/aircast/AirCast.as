@@ -249,8 +249,8 @@ package com.renaudbardet.ane.aircast
 				log( "received didReceiveMediaStateChange", event.level );
 				try{
 					jsonObject = JSON.parse(event.level);
-					var status:AirCastMediaStatus = jsonObject.status != null ? 
-						AirCastMediaStatus.fromJSONObject(jsonObject)
+					var status:AirCastMediaStatus = jsonObject.mediaStatus != null ? 
+						AirCastMediaStatus.fromJSONObject(jsonObject.mediaStatus)
 						: null;
 					dispatchEvent( new AirCastMediaEvent(AirCastMediaEvent.STATUS_CHANGED, status) );
 				} catch (e:*) {
